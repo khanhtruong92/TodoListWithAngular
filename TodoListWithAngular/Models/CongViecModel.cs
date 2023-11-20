@@ -4,6 +4,7 @@ namespace TodoListWithAngular.Models
 {
     public class CongViecModel
     {
+        public int? Id { get; set; }
         [Required]
         public string TieuDe { get; set; }
         public string? MoTa { get; set; }

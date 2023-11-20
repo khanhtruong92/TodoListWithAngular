@@ -13,7 +13,18 @@ builder.Services.AddDbContext<MyDbContext>(option => option.UseSqlServer(
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("default", policy =>
+    {
+        policy.WithOrigins("http://localhost:4200")
+          .AllowAnyHeader()
+          .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
+app.UseCors("default");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

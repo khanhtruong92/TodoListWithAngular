@@ -91,6 +91,7 @@ namespace TodoListWithAngular.Controllers
             }
             return query.Select(cv => new CongViecModel
                 {
+                    Id = cv.Id,
                     TieuDe = cv.TieuDe,
                     MoTa = cv.MoTa,
                     NgayTaoCongViec = cv.NgayTaoCongViec
